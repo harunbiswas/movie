@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
 import "../assets/sass/style.scss";
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body className={``}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
