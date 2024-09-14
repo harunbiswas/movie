@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Movie() {
   return (
-    <div className="movie">
+    <Link href="/movie" className="movie">
       <Image
         width="200"
         height="400"
@@ -32,6 +33,6 @@ export default function Movie() {
           incidunt
         </span>
       </div>
-    </div>
+    </Link>
   );
 }
