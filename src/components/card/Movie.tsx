@@ -1,20 +1,36 @@
 import Image from "next/image";
 import Link from "next/link";
+interface MovieProps {
+  movie: {
+    Poster?: string;
+    Title?: string;
+    Genre?: string;
+    Language?: string;
+    imdbRating?: string;
+    imdbVotes?: string;
+    Actors?: string;
+    Plot?: string;
+  };
+}
 
-export default function Movie() {
+export default function Movie({ movie }: MovieProps) {
   return (
     <Link href="/movie" className="movie">
-      <Image
-        width="200"
-        height="400"
-        src="https://script.viserlab.com/playlab/demo/assets/images/item/portrait//t6HIqrRAclMCA60NsSmeqe9RmNV.jpg"
-        alt="movie"
-      />
+      {movie?.Poster && movie?.Poster !== "N/A" ? ( // Check if imageUrl is valid
+        <Image
+          src={movie?.Poster} // Use a valid image URL
+          alt="My Image"
+          width={200} // Specify width
+          height={400} // Specify height
+        />
+      ) : (
+        <p>No image available.</p> // Fallback content when no valid image
+      )}
 
       <div className="movie-details">
-        <strong className="name">Avator 2</strong>
-        <span className="type">Action</span>
-        <span className="language">English</span>
+        <strong className="name">{movie?.Title}</strong>
+        <span className="type">{movie?.Genre}</span>
+        <span className="language">{movie?.Language}</span>
         <div className="rating">
           <Image
             width={10}
@@ -23,15 +39,11 @@ export default function Movie() {
             alt="movies"
           />
           <p>
-            8.6 <span>(123)</span>
+            {movie?.imdbRating} <span>({movie?.imdbVotes})</span>
           </p>
         </div>
-        <span className="star">stars: Harun</span>
-        <span className="plot">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit
-          doloremque tempore, accusamus maiores fugiat quos non eius error
-          incidunt
-        </span>
+        <span className="star">stars: {movie?.Actors}</span>
+        <span className="plot">{movie?.Plot}</span>
       </div>
     </Link>
   );
