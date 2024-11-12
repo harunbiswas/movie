@@ -3,7 +3,7 @@ import Link from "next/link";
 interface MovieProps {
   movie: {
     Poster?: string;
-    Title?: string;
+    Title: string;
     Genre?: string;
     Language?: string;
     imdbRating?: string;
@@ -18,7 +18,9 @@ interface MovieProps {
 export default function Movie({ movie }: MovieProps) {
   return (
     <Link
-      href={`${movie?.Language}/${movie?.Title}?id=${movie?._id}`}
+      href={`${movie?.Language}/${movie?.Title.replace(/ /g, "-")}?id=${
+        movie?._id
+      }`}
       className="movie"
     >
       {movie?.Poster && movie?.Poster !== "N/A" ? ( // Check if imageUrl is valid
