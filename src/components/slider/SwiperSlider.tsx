@@ -25,6 +25,7 @@ type Movie = {
   Country: string;
   imdbID: string;
   Year: string;
+  _id: string;
 };
 
 const SwiperSlider: React.FC = () => {

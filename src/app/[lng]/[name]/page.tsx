@@ -112,25 +112,25 @@ export default function Single() {
 
               <div className="bottom-body">
                 {data?.LowUrl && (
-                  <a className="btn" href={data?.LowUrl}>
+                  <a className="btn" target="_blank" href={data?.LowUrl}>
                     420p URL
                   </a>
                 )}
 
                 {data?.HdUrl && (
-                  <a className="btn" href={data?.HdUrl}>
+                  <a className="btn" target="_blank" href={data?.HdUrl}>
                     HD URL
                   </a>
                 )}
 
                 {data?.FullHdUrl && (
-                  <a className="btn" href={data?.FullHdUrl}>
+                  <a className="btn" target="_blank" href={data?.FullHdUrl}>
                     Full HD URL
                   </a>
                 )}
 
                 {data?.QhdUrl && (
-                  <a className="btn" href={data?.QhdUrl}>
+                  <a className="btn" target="_blank" href={data?.QhdUrl}>
                     QHD URL
                   </a>
                 )}

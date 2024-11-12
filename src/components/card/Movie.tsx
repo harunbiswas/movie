@@ -11,6 +11,7 @@ interface MovieProps {
     Actors?: string;
     Plot?: string;
     imdbID?: string;
+    _id: string;
   };
 }
 

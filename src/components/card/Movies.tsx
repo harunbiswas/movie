@@ -16,6 +16,7 @@ type Movie = {
   Country: string;
   imdbID: string;
   Year: string;
+  _id: string;
 };
 
 const Movies: React.FC<MovieProps> = ({ title }) => {
