@@ -27,11 +27,7 @@ const Movies: React.FC<MovieProps> = ({ title }) => {
 
   const getData = async () => {
     try {
-      const result = await axios.get(`${values.url}/movie/gets`, {
-        headers: {
-          Authorization: localStorage.getItem("authToken"),
-        },
-      });
+      const result = await axios.get(`${values.url}/movie/gets`);
       setMovies(result.data);
     } catch (err) {
       console.log(err);

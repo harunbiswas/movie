@@ -10,12 +10,16 @@ interface MovieProps {
     imdbVotes?: string;
     Actors?: string;
     Plot?: string;
+    imdbID?: string;
   };
 }
 
 export default function Movie({ movie }: MovieProps) {
   return (
-    <Link href="/movie" className="movie">
+    <Link
+      href={`${movie?.Language}/${movie?.Title}?id=${movie?._id}`}
+      className="movie"
+    >
       {movie?.Poster && movie?.Poster !== "N/A" ? ( // Check if imageUrl is valid
         <Image
           src={movie?.Poster} // Use a valid image URL
