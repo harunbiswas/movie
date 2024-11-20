@@ -1,3 +1,4 @@
+import AppProvider from "@/components/AppProvider";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
@@ -17,9 +18,11 @@ export default function RootLayout({
     <html lang="en">
       <head></head>
       <body className={``}>
-        <Header />
-        {children}
-        <Footer />
+        <AppProvider>
+          <Header />
+          {children}
+          <Footer />
+        </AppProvider>
       </body>
     </html>
   );

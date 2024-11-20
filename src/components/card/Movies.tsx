@@ -1,26 +1,40 @@
 "use client";
 
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import values from "../../values";
+import ThemeContext from "../ThemeContext";
 import Movie from "./Movie";
 
 interface MovieProps {
   title: string;
 }
-type Movie = {
-  Poster: string;
+interface Movie {
+  _id: string;
   Title: string;
   Genre: string;
   Language: string;
   Country: string;
   imdbID: string;
   Year: string;
-  _id: string;
-};
+  Poster: string;
+  Actors?: string; // Optional, could be undefined
+  Director?: string; // Optional, could be undefined
+  Plot?: string; // Optional, could be undefined
+  Released?: string; // Optional, could be undefined
+  Runtime?: string; // Optional, could be undefined
+  Writer?: string; // Optional, could be undefined
+  [key: string]: string | undefined; // Allow indexing by any string
+}
 
 const Movies: React.FC<MovieProps> = ({ title }) => {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const context = useContext(ThemeContext);
+
+  if (!context) {
+    throw new Error("useContext must be used within a ThemeProvider");
+  }
+
+  const { movies, setMovies } = context;
 
   useEffect(() => {
     getData();

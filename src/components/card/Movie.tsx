@@ -2,25 +2,29 @@ import Image from "next/image";
 import Link from "next/link";
 interface MovieProps {
   movie: {
-    Poster?: string;
-    Title: string;
-    Genre?: string;
-    Language?: string;
-    imdbRating?: string;
-    imdbVotes?: string;
-    Actors?: string;
-    Plot?: string;
-    imdbID?: string;
     _id: string;
+    Title: string;
+    Genre: string;
+    Language: string;
+    Country: string;
+    imdbID: string;
+    Year: string;
+    Poster: string;
+    Actors?: string; // Optional, could be undefined
+    Director?: string; // Optional, could be undefined
+    Plot?: string; // Optional, could be undefined
+    Released?: string; // Optional, could be undefined
+    Runtime?: string; // Optional, could be undefined
+    Writer?: string; // Optional, could be undefined
   };
 }
 
 export default function Movie({ movie }: MovieProps) {
   return (
     <Link
-      href={`${movie?.Language}/${movie?.Title.replace(/ /g, "-")}?id=${
-        movie?._id
-      }`}
+      href={`${
+        movie?.Language?.replace(/[\s,]+/g, "-") || ""
+      }/${movie?.Title.replace(/ /g, "-")}?id=${movie?._id}`}
       className="movie"
     >
       {movie?.Poster && movie?.Poster !== "N/A" ? ( // Check if imageUrl is valid
