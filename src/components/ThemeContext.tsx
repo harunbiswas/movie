@@ -15,6 +15,8 @@ interface Movie {
   Released?: string; // Optional, could be undefined
   Runtime?: string; // Optional, could be undefined
   Writer?: string; // Optional, could be undefined
+  imdbRating?: string; // Optional, could be undefined
+  imdbVotes?: string; // Optional, could be undefined
   [key: string]: string | undefined; // Allow indexing by any string
 }
 

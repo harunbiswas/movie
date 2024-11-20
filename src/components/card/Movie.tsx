@@ -16,6 +16,8 @@ interface MovieProps {
     Released?: string; // Optional, could be undefined
     Runtime?: string; // Optional, could be undefined
     Writer?: string; // Optional, could be undefined
+    imdbRating?: string; // Optional, could be undefined
+    imdbVotes?: string;
   };
 }
 
