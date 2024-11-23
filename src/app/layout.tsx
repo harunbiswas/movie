@@ -5,8 +5,10 @@ import type { Metadata } from "next";
 import "../assets/sass/style.scss";
 
 export const metadata: Metadata = {
-  title: "CineDroid | Free movie download",
-  description: "A user can download movie free",
+  title:
+    "CineDroid | Free Unlimited Downloads for Movies, TV, Animation & Anime",
+  description:
+    "Download your favorite movies, TV shows, anime, and OTT content for free with CineDroid. Unlimited entertainment awaits in HD quality!",
 };
 
 export default function RootLayout({
