@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import "../assets/sass/style.scss";
 
 export const metadata: Metadata = {
-  title: "Free movie download",
+  title: "CineDroid | Free movie download",
   description: "A user can download movie free",
 };
 
@@ -16,7 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="KT7FZVHjZuIjA1kQEp9GDl9zEljAUdjgHEBaRFv-fpA"
+        />
+        <link rel="icon" href="/assets/images/cinedroid.com.png" />
+      </head>
       <body className={``}>
         <AppProvider>
           <Header />
