@@ -2,6 +2,7 @@ import AppProvider from "@/components/AppProvider";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
+import Script from "next/script"; // Import for adding external scripts dynamically
 import "../assets/sass/style.scss";
 
 export const metadata: Metadata = {
@@ -25,7 +26,22 @@ export default function RootLayout({
         />
         <link rel="icon" href="/assets/images/cinedroid.com.png" />
       </head>
-      <body className={``}>
+      <body>
+        {/* Google Analytics Script */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-X8DG6YJX6D"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-X8DG6YJX6D');
+          `}
+        </Script>
+
+        {/* Main App Layout */}
         <AppProvider>
           <Header />
           {children}
