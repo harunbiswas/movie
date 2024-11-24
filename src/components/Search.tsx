@@ -40,7 +40,7 @@ export default function Search({ setIsSearch }: SearchProps) {
   const { movies } = context;
 
   useEffect(() => {
-    if (movies) {
+    if (movies && value) {
       // Filter movies based on the search query value
       const filteredResults = movies.filter((movie) =>
         [
@@ -63,6 +63,8 @@ export default function Search({ setIsSearch }: SearchProps) {
         })
       );
       setResult(filteredResults);
+    } else {
+      setResult([]);
     }
   }, [movies, value]);
 

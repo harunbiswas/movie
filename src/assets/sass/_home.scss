@@ -1,5 +1,5 @@
 .banner {
-  background-image: url(https://script.viserlab.com/playlab/demo/assets/images/frontend/banner/628a12b93737b1653215929.jpg);
+  background-image: url("/assets/images/cinedroid.com-movie-banner .webp");
   position: relative;
   padding-top: 66px;
   background-repeat: repeat;
@@ -182,6 +182,34 @@
       .movie-details {
         display: flex;
       }
+    }
+  }
+}
+
+.movie-page {
+  padding-top: 60px;
+
+  &-banner {
+    min-height: 250px;
+    background-image: url("/assets/images/cinedroid.com-movie-banner .webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    color: $white;
+    z-index: 1;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $black;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      z-index: -1;
     }
   }
 }

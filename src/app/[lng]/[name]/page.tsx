@@ -38,6 +38,8 @@ export default function Single() {
     getData();
   }, []);
 
+  console.log(data);
+
   const getData = async () => {
     try {
       const result = await axios.get(`${values.url}/movie/get?id=${id}`);

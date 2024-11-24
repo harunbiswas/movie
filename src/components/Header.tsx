@@ -19,19 +19,19 @@ export default function Header() {
     },
     {
       name: "movie",
-      url: "/",
+      url: "/movie",
     },
     {
       name: "tv shows",
-      url: "/",
+      url: "tv-shows",
     },
     {
       name: "request",
-      url: "/",
+      url: "https://t.me/cinedroidofficial",
     },
     {
       name: "Contact",
-      url: "/",
+      url: "https://www.facebook.com/cinedroidofficial",
     },
   ];
 
