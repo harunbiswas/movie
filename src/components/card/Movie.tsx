@@ -24,7 +24,7 @@ interface MovieProps {
 export default function Movie({ movie }: MovieProps) {
   return (
     <Link
-      href={`${
+      href={`/${
         movie?.Language?.replace(/[\s,]+/g, "-") || ""
       }/${movie?.Title.replace(/ /g, "-")}?id=${movie?._id}`}
       className="movie"

@@ -103,9 +103,10 @@ export default function Search({ setIsSearch }: SearchProps) {
           {result?.map((data, i) => (
             <li key={i} className="search-result-item">
               <Link
-                href={`${
+                href={`/${
                   data?.Language?.replace(/[\s,]+/g, "-") || ""
                 }/${data?.Title.replace(/ /g, "-")}?id=${data?._id}`}
+                onClick={() => setIsSearch(false)}
               >
                 <div className="image">
                   {data?.Poster && data?.Poster !== "N/A" ? (
