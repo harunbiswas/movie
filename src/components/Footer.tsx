@@ -100,7 +100,7 @@ export default function Footer() {
         <div className="container">
           <p>
             &copy; {new Date().getFullYear()}. All Rights Reserved by{" "}
-            <span>CineDroid</span>. Design and develop by{" "}
+            <span>CineDroid</span> | Design and develop by{" "}
             <a href="http://devsroom.com" target="_blank" rel="creator">
               DevsRoom
             </a>

@@ -2,6 +2,7 @@ import AppProvider from "@/components/AppProvider";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
+import Head from "next/head"; // Import for managing head tags
 import Script from "next/script"; // Import for adding external scripts dynamically
 import "../assets/sass/style.scss";
 
@@ -19,13 +20,59 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <Head>
+        {/* Primary Meta Tags */}
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="title" content={metadata.title} />
+        <meta name="description" content={metadata.description} />
+        <meta
+          name="keywords"
+          content="free movie downloads, TV shows, anime downloads, HD movies, OTT content, unlimited entertainment"
+        />
+        <meta name="author" content="Devsroom Team" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cinedroid.com/" />
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta
+          property="og:image"
+          content="https://cinedroid.com/assets/images/cinedroid-social-image.png"
+        />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://cinedroid.com/" />
+        <meta property="twitter:title" content={metadata.title} />
+        <meta property="twitter:description" content={metadata.description} />
+        <meta
+          property="twitter:image"
+          content="https://cinedroid.com/assets/images/cinedroid-social-image.png"
+        />
+
+        {/* Additional Meta Tags */}
+        <meta name="theme-color" content="#d60056" />
+        <link rel="canonical" href="https://cinedroid.com/" />
+        <link rel="icon" href="/assets/images/cinedroid.com.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/assets/images/cinedroid.com.png"
+        />
+        <meta name="rating" content="General" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+
+        {/* Google Site Verification */}
         <meta
           name="google-site-verification"
           content="KT7FZVHjZuIjA1kQEp9GDl9zEljAUdjgHEBaRFv-fpA"
         />
-        <link rel="icon" href="/assets/images/cinedroid.com.png" />
-      </head>
+      </Head>
       <body>
         {/* Google Analytics Script */}
         <Script
